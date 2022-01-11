@@ -32,6 +32,39 @@ html {
     box-sizing: inherit;
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
 body {
     background: var(--color-primary-light) url('../images/pattern-background-desktop.svg');
     background-position: top center;
@@ -41,12 +74,6 @@ body {
     font-weight: 500;
     min-height: 100vh;
     position: relative;
-}
-
-@media screen and (max-width: 375px) {
-    body {
-        background: var(--color-primary-light) url('../images/pattern-background-mobile.svg');
-    }
 }
 
 .card {
@@ -76,12 +103,6 @@ body {
     font-weight: 900;
     padding: 3.2rem 0 2rem 0;
     text-align: center;
-}
-
-@media screen and (min-width: 376px) and (max-width: 1440px) {
-    .card__title {
-        font-size: 2.8rem;
-    }
 }
 
 .card__description {
@@ -147,12 +168,6 @@ body {
     font-size: 1.4rem;
 }
 
-@media screen and (min-width: 376px) and (max-width: 1440px) {
-    .order__plan {
-        font-size: 1.6rem;
-    }
-}
-
 .text-bold {
     color: var(--color-text-dark);
     display: inline-block;
@@ -166,46 +181,56 @@ body {
     transition: color 0.3s linear;
 }
 
-@media screen and (min-width: 376px) and (max-width: 1440px) {
-    .order__link {
-        font-size: 1.4rem;
-    }
-}
-
 .order__link:hover {
     color: var(--color-hover);
     text-decoration: none;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+/* ------- RWD ------- */
+
+@media screen and (max-width: 375px) {
+    body {
+        background: var(--color-primary-light) url('../images/pattern-background-mobile.svg');
+        background-position: top center;
+        background-repeat: repeat-x;
+    }
 }
 
-ol,
-ul {
-    list-style: none;
-}
+@media screen and (min-width: 1440px) {
+    .card {
+        max-width: 450px;
+    }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+    .card__title {
+        font-size: 2.8rem;
+    }
 
-main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+    .card__img-wrapper {
+        height: 220px;
+    }
+
+    .card__description {
+        padding: 0 5rem;
+    }
+
+    .card__links {
+        margin: 0 5rem;
+    }
+
+    .order {
+        margin: 2.5rem 5rem 3.2rem 5rem;
+        padding: 2.5rem;
+    }
+
+    .order__link {
+        font-size: 1.4rem;
+    }
+
+    .order__plan {
+        font-size: 1.6rem;
+    }
+
+    .card__link--cancel {
+        padding: 2.5rem;
+    }
 }

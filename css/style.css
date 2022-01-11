@@ -33,7 +33,9 @@ html {
 }
 
 body {
-    background: var(--color-primary-light);
+    background: var(--color-primary-light) url('../images/pattern-background-desktop.svg');
+    background-position: top center;
+    background-repeat: repeat-x;
     font-size: 1.6rem;
     font-family: 'Red Hat Display', 'Arial', 'Helvetica', sans-serif;
     font-weight: 500;
@@ -41,18 +43,8 @@ body {
     position: relative;
 }
 
-.body-bg {
-    background: var(--color-primary-light) url('../images/pattern-background-desktop.svg');
-    background-position: bottom center;
-    height: 30%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
 @media screen and (max-width: 375px) {
-    .body-bg {
+    body {
         background: var(--color-primary-light) url('../images/pattern-background-mobile.svg');
     }
 }
